@@ -1,43 +1,55 @@
-<div class="card" [class.sem-estoque]="produto.estoque === 0">
+<div class="card" 
+     [class.sem-estoque]="produto.estoque === 0"
+     (mouseenter)="startCarousel()"
+     (mouseleave)="stopCarousel()">
 
   <div class="image-wrapper">
-    @if (produto?.imagem) {
-      <img [src]="produto.imagem" alt="{{ produto.nome }}">
+
+    @if (produto?.imagens?.length > 0) {
+
+      <div class="carousel">
+        <img 
+          [src]="produto.imagens[slideIndex]" 
+          alt="{{ produto.nome }}"
+        >
+      </div>
+
     } @else {
       <div class="no-image">No image</div>
     }
+
   </div>
 
   <h3>{{ produto.nome }}</h3>
   <p class="descricao">{{ produto.descricao }}</p>
 
   <div class="info">
-  <div>
+    <div>
 
-    @if (produto.estoque > 0) {
-      <div class="preco">
-        R$ {{ produto.preco | number:'1.2-2' }}
-      </div>
+      @if (produto.estoque > 0) {
+        <div class="preco">
+          R$ {{ produto.preco | number:'1.2-2' }}
+        </div>
 
-      <div class="mini-info">
-        Desconto: {{ produto.desconto }}% • Estoque: {{ produto.estoque }}
-      </div>
-    } @else {
-      <div class="mini-info" style="color: var(--muted);">
-        Fora de estoque
-      </div>
-    }
+        <div class="mini-info">
+          Desconto: {{ produto.desconto }}% • Estoque: {{ produto.estoque }}
+        </div>
+      } @else {
+        <div class="mini-info" style="color: var(--muted);">
+          Fora de estoque
+        </div>
+      }
 
-  </div>
+    </div>
 
-  <div class="acoes">
-    <button class="btn btn-primary" [disabled]="produto.estoque === 0">
-      {{ produto.estoque === 0 ? 'Indisponível' : 'Adicionar ao carrinho' }}
-    </button>
+    <div class="acoes">
+      <button class="btn btn-primary" [disabled]="produto.estoque === 0">
+        {{ produto.estoque === 0 ? 'Indisponível' : 'Adicionar ao carrinho' }}
+      </button>
 
-    <button class="btn btn-ghost" [disabled]="produto.estoque === 0">
-      Ver produto
-    </button>
+      <button class="btn btn-ghost" [disabled]="produto.estoque === 0">
+        Ver produto
+      </button>
+    </div>
   </div>
 </div>
-

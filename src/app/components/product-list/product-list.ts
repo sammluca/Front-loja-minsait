@@ -12,28 +12,65 @@ import { ProductCard } from '../product-card/product-card';
 export class ProductList {
   products = [
     {
-      nome: 'Camiseta Preta',
-      descricao: 'Camiseta de algodão 100%.',
-      preco: 49.9,
+      nome: 'Camisa Masculina Nike Manga Curta Dri-Fit Park VII',
+      descricao: 'A camiseta Nike perfeita para te acompanhar nos diversos treinos é a Park VII.',
+      preco: 49,
       desconto: 10,
       estoque: 100,
-      imagem: '/tshirt.jpg'
+      imagens: [
+        '/tshirt.jpg',
+        '/tshirt_2.jpg'
+
+      ]
     },
     {
-      nome: 'Tênis Esportivo',
-      descricao: 'Tênis leve para corrida e treino.',
-      preco: 349.9,
+      nome: 'Tênis Feminino Nike Air Zoom Alphafly 3',
+      descricao: 'Ajustado para a velocidade da maratona, o Alphafly 3 ajuda você a ir além do que você pensava ser possível.',
+      preco: 249,
       desconto: 15,
       estoque: 42,
-      imagem: '/shoes.jpg'
+      imagens: [
+        '/shoes.jpg',
+        '/shoes_2.jpg',
+        '/shoes_3.jpg'
+
+      ]
     },
     {
-      nome: 'Headphone',
-      descricao: 'Fone com cancelamento de ruído.',
-      preco: 299.9,
+      nome: 'Fone de Ouvido Bluethooth JBL Tune 770 NC',
+      descricao: 'Fone de Ouvido Bluetooth JBL Tune 770 NC Headphone Preto com Cancelamento de Ruídos Adaptativo',
+      preco: 199,
       desconto: 5,
       estoque: 0,
-      imagem: '/headphones.jpg'
+      imagens: [
+        '/headphones.jpg',
+        '/headphones_2.jpg',
+        '/headphones_3.jpg'
+      ]
+    },
+    {
+      nome: 'Apple iPhone 17 Pro Max 256GB Laranja-cósmico 6,9" 48MP iOS 5G',
+      descricao: 'O iPhone mais potente já produzido. Tela brilhante de 6,9 polegadas*',
+      preco: 11249,
+      desconto: 10,
+      estoque: 21,
+      imagens: [
+        '/iphone17.jpg',
+        '/iphone17_2.jpg',
+        '/iphone17_3.jpg'
+      ]
+               
+
+  },
+     {
+      nome: 'Apple Carregador MagSafe',
+      descricao: 'Com o carregador MagSafe, você recarrega seus aparelhos num instante e sem fios.',
+      preco: 324,
+      desconto: 5,
+      estoque: 100,
+      imagens: ['/carregadormag.jpg']
+               
+
     }
   ];
 }
